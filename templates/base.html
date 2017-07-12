@@ -51,10 +51,18 @@
 	<div id="fh5co-offcanvass">
 		<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
 		<h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">Clone pin</a></h1>
+		{% if request.user.is_authenticated %}
+			<h3>¡Hola! {{request.user.username}} </h3>
+		{% endif %}
 		<ul>
-			<li class="active"><a href="index.html">Home</a></li>
-			<li><a href="about.html">Sign up</a></li>
-			<li><a href="pricing.html">Login</a></li>
+			<li class="active"><a href="{% url 'landing:index' %}">Home</a></li>
+			{% if not request.user.is_authenticated %}
+			<li><a href="{% url 'landing:signup' %}">Sign up</a></li>
+			<li><a href="{% url 'landing:login' %}">Login</a></li>
+			{% else %}
+			<li><a href="">Mi perfil</a></li>
+			
+			{% endif %}
 			<li><a href="contact.html">Contact</a></li>
 		</ul>
 		<h3 class="fh5co-lead">Connect with us</h3>
