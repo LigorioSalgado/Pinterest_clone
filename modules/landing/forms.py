@@ -1,4 +1,27 @@
 from django import forms
+from django.forms import ModelForm
+from .models import Images
+
+class ImageUploadForm(ModelForm):
+    
+    class Meta:
+        model = Images
+        fields = ('descripcion','categorias','imagen')
+        widget = {
+            'descripcion':forms.Textarea(
+                attrs = {
+                    'rows':10,
+                    'cols':15,
+                    'class':'form-control',
+                    'placeholder':'Escribe una descripcion'
+                }
+            ),
+            'categorias':forms.Select(
+                attrs= {
+                    'class':'form-control'
+                }
+            )
+        }
 
 
 class SignupForm(forms.Form):  

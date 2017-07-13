@@ -21,7 +21,7 @@ class Images(models.Model):
     usuario = models.ForeignKey(User,
     on_delete=models.CASCADE)
     descripcion = models.TextField()
-    fecha_crado = models.DateTimeField(auto_now=True)
+    fecha_creado = models.DateTimeField(auto_now=True)
     categorias = models.CharField(max_length=50,choices=CATEGORIAS)
     imagen = models.ImageField(upload_to=user_directory_path)
 

@@ -60,8 +60,9 @@
 			<li><a href="{% url 'landing:signup' %}">Sign up</a></li>
 			<li><a href="{% url 'landing:login' %}">Login</a></li>
 			{% else %}
-			<li><a href="">Mi perfil</a></li>
-			
+			<li><a href="{% url 'landing:profile' %}">Mi perfil</a></li>
+			<li><a href="{% url 'landing:imagen' %}">Upload imagen</a></li>
+			<li><a href="{% url 'landing:logout' %}">Logout</a></li>
 			{% endif %}
 			<li><a href="contact.html">Contact</a></li>
 		</ul>

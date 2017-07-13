@@ -6,5 +6,8 @@ urlpatterns = [
     url(r'^$', index,name="index"),
     url(r'^login/$', Login,name="login"),
     url(r'^signup/$', SignUp,name="signup"),
+    url(r'^logout/$', Logout,name="logout"),
+    url(r'^upload/$', UploadImage,name="imagen"),
+    url(r'^profile/$', Profile ,name="profile"),
 
 ]
