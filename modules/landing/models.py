@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from modules.users.models import User
 
 # Create your models here.
 def user_directory_path(instance,filename):
@@ -24,4 +25,8 @@ class Images(models.Model):
     fecha_creado = models.DateTimeField(auto_now=True)
     categorias = models.CharField(max_length=50,choices=CATEGORIAS)
     imagen = models.ImageField(upload_to=user_directory_path)
+
+
+    def __str__(self):
+        return "Imagen nº %s del usuario %s" % (str(self.id),self.usuario.email)
 

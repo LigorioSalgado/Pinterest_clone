@@ -9,5 +9,7 @@ urlpatterns = [
     url(r'^logout/$', Logout,name="logout"),
     url(r'^upload/$', UploadImage,name="imagen"),
     url(r'^profile/$', Profile ,name="profile"),
+    url(r'^endpoint/images/$', ImagesEndpoint ,name="profile"),
+    url(r'^endpoint/images/upload/$', ImagesEndpointUpload ,name="profile"),
 
 ]
